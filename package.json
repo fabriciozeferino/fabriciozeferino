@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint --fix"
+    "lint": "vue-cli-service lint --fix",
+    "deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "eslint-plugin-prettier": "^3.3.0",
+    "execa": "^1.0.0",
     "firebase": "^8.2.0",
     "prettier": "^1.19.1",
     "vue": "^3.0.0",
