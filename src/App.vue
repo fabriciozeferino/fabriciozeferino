@@ -1,17 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <div v-for="user in users" :key="user.id">{{user.first_name}} {{user.last_name}}</div>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import * as fb from '../firebase'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+
+  data() {
+    return {
+      users: []
+    }
+  },
+
+  mounted() {
+    this.getUsers()
+  },
+
+  methods: {
+    async getUsers(){
+      this.users = []
+      
+      await fb.usersCollection.orderBy('first_name', 'asc')
+        .onSnapshot(snapshot => snapshot.forEach(item => this.users.push(item.data())));
+    }
+  },
+};
+
+
 </script>
 
 <style>
