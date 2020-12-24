@@ -9,6 +9,8 @@ const fs = require('fs');
 
     await execa('git', ['push', 'origin', 'master']);
 
+    console.log('Commit everything...');
+
     await execa('git', ['checkout', '--orphan', 'gh-pages']);
     // eslint-disable-next-line no-console
     console.log('Building started...');
