@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="bg-red-100">
   <div v-for="user in users" :key="user.id">{{user.first_name}} {{user.last_name}}</div>
 </div>
 </template>
