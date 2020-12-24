@@ -47,27 +47,41 @@
 // })
 
 // export default router
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-import { createWebHistory, createRouter } from 'vue-router'
-import Home from '@/views/Home.vue'
-import About from '@/views/About.vue'
+Vue.use(VueRouter)
+
+// Vue.use(VueRouter)
+// import { createWebHistory, createRouter } from 'vue-router'
+// import Home from '@/views/Home.vue'
+// import About from '@/views/About.vue'
 
 const routes = [
   { path: '/', redirect: '/home' },
+
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: () =>
+      import(/* webpackChunkName: "home-page" */ '@/pages/HomePage.vue')
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: () =>
+      import(/* webpackChunkName: "about-page" */ '@/pages/AboutPage.vue')
   }
 ]
 
-const router = createRouter({
-  history: createWebHistory(),
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes
+// })
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 

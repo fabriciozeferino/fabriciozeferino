@@ -1,14 +1,26 @@
 <template>
-<div class="bg-red-100">
-  <div v-for="user in users" :key="user.id">{{user.first_name}} {{user.last_name}}</div>
-</div>
+<div>
+    <TheNavbar />
+
+    <transition name="fade" appear mode="out-in">
+<router-view />
+</transition>
+
+<TheFooter />
+
+
+    </div>
 </template>
 
 <script>
 import * as fb from '../firebase'
+import TheFooter from '@/components/TheFooter.vue'
+import TheNavbar from '@/components/TheNavbar.vue'
 
 export default {
   name: 'App',
+
+  components: {TheFooter, TheNavbar},
 
   data() {
     return {
@@ -32,3 +44,13 @@ export default {
 
 
 </script>
+
+<style>
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
