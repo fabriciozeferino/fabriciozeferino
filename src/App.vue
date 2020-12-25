@@ -1,16 +1,20 @@
 <template>
-<div>
+
+<div class="h-screen max-w-6xl mx-auto">
     <TheNavbar />
 
     <transition name="fade" appear mode="out-in">
-<router-view />
-</transition>
-
-<TheFooter />
-
-
-    </div>
+      <div class="pt-64 h-full">
+        <router-view />
+      </div>
+    </transition>
+    
+    <TheFooter />
+    <!-- <loading :show="loading" /> -->
+  </div>
 </template>
+
+
 
 <script>
 import * as fb from '../firebase'
