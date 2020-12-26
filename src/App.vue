@@ -1,13 +1,13 @@
 <template>
-  <div class="h-screen flex flex-col">
-    <TheNavbar />
+  <div class="h-screen flex flex-col bg-gray-50">
+    <TheNavbar class="mb-12" />
 
     <transition
       is="div"
       name="fade"
       appear
       mode="out-in"
-      class="flex-1 container mx-auto"
+      class="flex-1 md:container w-full mx-auto"
     >
       <router-view />
     </transition>
@@ -52,13 +52,3 @@ export default {
 
 
 </script>
-
-<style>
-  .fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-</style>

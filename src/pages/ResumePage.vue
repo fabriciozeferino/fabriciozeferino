@@ -9,11 +9,11 @@
           <div
             class="initials-container mr-2 text-base leading-none text-white font-medium print:bg-black p-2"
           >
-            <img
+            <!--            <img
               class="h-24 w-24 rounded-full shadow-md"
               src="{{ url('images/avatar.jpg') }}"
               alt=""
-            >
+            >-->
           </div>
           <div class="leading-none">
             <h1 class="text-2xl font-bold uppercase text-gray-900">
@@ -136,7 +136,7 @@
           </div>
         </section>
 
-        <section class="mt-8 py-2 px-4">
+        <!--        <section class="mt-8 py-2 px-4 hidden">
           <div class="col-break-avoid">
             <h2 class="text-sm text-gray-600 font-bold print:font-normal tracking-widest">
               CONTACT
@@ -166,48 +166,15 @@
                   >
                     <path
                       class="text-gray-600 print:text-gray-900 fill-current"
-                      d="M13.04 14.69l1.07-2.14a1 1 0 0 1 1.2-.5l6 2A1 1 0 0 1 22 15v5a2 2 0 0 1-2 2h-2A16 16 0 0 1 2 6V4c0-1.1.9-2 2-2h5a1 1 0 0 1 .95.68l2 6a1 1 0 0 1-.5 1.21L9.3 10.96a10.05 10.05 0 0 0 3.73 3.73zM8.28 4H4v2a14 14 0 0 0 14 14h2v-4.58l-4.5-1.5-1.12 2.26a1 1 0 0 1-1.3.46 12.04 12.04 0 0 1-6.02-6.01 1 1 0 0 1 .46-1.3l2.26-1.14L8.28 4z"
-                    />
-                  </svg>
-                  07452 827892
-                </li>
-                <li class="mt-1 pl-6  text-gray-700 leading-normal">
-                  <svg
-                    class="w-4 h-4 inline -ml-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      class="text-gray-600 print:text-gray-900 fill-current"
                       d="M5.64 16.36a9 9 0 1 1 12.72 0l-5.65 5.66a1 1 0 0 1-1.42 0l-5.65-5.66zm11.31-1.41a7 7 0 1 0-9.9 0L12 19.9l4.95-4.95zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
                     />
                   </svg>
-                  22 Faversham Way, Wirral CH42 2EB
-                </li>
-                <li class="mt-1 pl-6 text-gray-700 leading-normal">
-                  <a
-                    href="https://github.com/fabriciozeferino/billboard"
-                    target="_blank"
-                    class="group"
-                  >
-                    <svg
-                      class="fill-current w-4 h-4 inline -ml-6"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="text-gray-600 group-hover:text-gray-700 change-color-fast print:text-gray-900 fill-current"
-                        d="m13.18 11.309c-0.718 0-1.3 0.807-1.3 1.799 0 0.994 0.582 1.801 1.3 1.801s1.3-0.807 1.3-1.801c-1e-3 -0.992-0.582-1.799-1.3-1.799zm4.526-4.683c0.149-0.365 0.155-2.439-0.635-4.426 0 0-1.811 0.199-4.551 2.08-0.575-0.16-1.548-0.238-2.519-0.238-0.973 0-1.945 0.078-2.52 0.238-2.741-1.881-4.552-2.08-4.552-2.08-0.789 1.987-0.781 4.061-0.634 4.426-0.928 1.008-1.495 2.219-1.495 3.871 0 7.186 5.963 7.301 7.467 7.301 0.342 0 1.018 2e-3 1.734 2e-3 0.715 0 1.392-2e-3 1.732-2e-3 1.506 0 7.467-0.115 7.467-7.301 0-1.652-0.566-2.863-1.494-3.871zm-7.678 10.289h-0.056c-3.771 0-6.709-0.449-6.709-4.115 0-0.879 0.31-1.693 1.047-2.369 1.227-1.127 3.305-0.531 5.662-0.531h0.029 0.027c2.357 0 4.436-0.596 5.664 0.531 0.735 0.676 1.045 1.49 1.045 2.369 0 3.666-2.937 4.115-6.709 4.115zm-3.207-5.606c-0.718 0-1.3 0.807-1.3 1.799 0 0.994 0.582 1.801 1.3 1.801 0.719 0 1.301-0.807 1.301-1.801 0-0.992-0.582-1.799-1.301-1.799z"
-                      />
-                    </svg>
-
-                    github.com/fabriciozeferino/billboard
-                  </a>
+                  Wirral, UK
                 </li>
               </ul>
             </section>
           </div>
-        </section>
+        </section>-->
       </div>
     </div>
   </div>

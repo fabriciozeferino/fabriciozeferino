@@ -12,7 +12,7 @@
             </div>
                         
             <p class="mt-2 text-gray-400 max-w-md">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.
+              Full-stack web developer. Based in UK 🇬🇧.
             </p>
                         
             <div class="flex mt-4 -mx-2">
@@ -78,23 +78,7 @@
               >Careers</a>
             </div>
 
-            <div>
-              <h3 class="text-gray-100 uppercase">
-                Blog
-              </h3>
-              <a
-                href="#"
-                class="block mt-2 text-sm text-gray-400"
-              >Tec</a>
-              <a
-                href="#"
-                class="block mt-2 text-sm text-gray-400"
-              >Music</a>
-              <a
-                href="#"
-                class="block mt-2 text-sm text-gray-400"
-              >Videos</a>
-            </div>
+
 
             <div>
               <h3 class="text-gray-100 uppercase">
@@ -118,8 +102,19 @@
               <h3 class="text-gray-100 uppercase">
                 Contact
               </h3>
-              <span class="block mt-2 text-sm text-gray-400">+1 526 654 8965</span>
-              <span class="block mt-2 text-sm text-gray-400">example@email.com</span>
+
+              <section class="mb-4 text-sm text-gray-400">
+                <ul>
+                  <li class="mt-1 pl-6 whitespace-no-wrap inline-flex items-center">
+                    <MailIcon class="-ml-6 h-4 w-4 text-gray-600 fill-current mr-2" />
+                    fabriciozeferino@gmail.com
+                  </li>
+                  <li class="mt-1 pl-6  whitespace-no-wrap inline-flex">
+                    <PlaceIcon class="-ml-6 h-4 w-4 text-gray-600 fill-current mr-2" />
+                    Wirral, UK
+                  </li>
+                </ul>
+              </section>
             </div>
           </div>
         </div>
@@ -135,3 +130,14 @@
     </div>
   </footer>
 </template>
+
+
+<script>
+import MailIcon from '@/assets/icons/mail.svg'
+import PlaceIcon from '@/assets/icons/place.svg'
+
+export default {
+  name: 'Navbar',
+  components: {MailIcon, PlaceIcon},
+}
+</script>

@@ -1,12 +1,12 @@
 <template>
   <nav class="bg-white shadow">
-    <div class="container mx-auto px-6 py-3">
+    <div class="container max-w-5xl mx-auto px-6 py-3">
       <div class="md:flex md:items-center md:justify-between">
         <div class="flex justify-between items-center">
           <div class="text-xl font-semibold text-gray-700">
             <a
               href="#"
-              class="text-gray-800 text-xl font-bold hover:text-gray-700 md:text-2xl"
+              class="text-gray-700 text-xl font-bold hover:text-gray-700 md:text-2xl"
             >Fabricio Zeferino</a>
           </div>
 
@@ -24,10 +24,18 @@
 
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div class="hidden md:flex md:items-center md:justify-between flex-1">
-          <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
+          <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8" />
+
+          <!-- right side -->
+          <div class="flex items-center mt-4 md:mt-0">
             <BaseLink
               route-to="/home"
               label="Home"
+            />
+
+            <BaseLink
+              route-to="/resume"
+              label="Resume"
             />
 
             <BaseLink
@@ -35,9 +43,6 @@
               label="About"
             />
           </div>
-
-          <!-- right side -->
-          <div class="flex items-center mt-4 md:mt-0" />
         </div>
       </div>
     </div>
@@ -129,7 +134,7 @@
 // import Avatar from '@/ecommerce/js/components/shared/Avatar'
 
 import BaseLink from '@/components/BaseLink'
-import BurgerIcon from '@/components/img/burger.svg?inline'
+import BurgerIcon from '@/assets/icons/burger.svg'
 export default {
   name: 'Navbar',
 
