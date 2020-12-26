@@ -1,31 +1,55 @@
 <template>
   <div class="flex flex-col justify-center items-center w-full max-w-4xl mb-40 mx-auto">
-    <div class="px-8 py-4 bg-white  overflow-hidden">
+    <div class="px-16 py-4 overflow-hidden">
       <h1 class="leading-snug font-bold mb-4">
-        Hello! My name is <span class="text-gray-900">Fabricio Zeferino.</span> I am a full-stack web developer. Based in UK 🇬🇧.
+        Hello! My name is <span class="text-gray-900">Fabricio Zeferino.</span> I am a Full Stack Web Developer. Based in UK 🇬🇧.
       </h1>
-
-      <div class="flex justify-end items-center">
-        <div class="flex items-center">
-          <img
-            class="mx-2 w-10 h-10 object-cover rounded-full hidden sm:block"
-            src="https://github.com/fabriciozeferino.png?size=460"
-            alt="avatar"
-          >
-          <span class="font-medium">Fabricio Zeferino</span>
-        </div>
-      </div>
     </div>
 
     <p class="my-8">
       Having fun with <span style="color: #4fc08d">Vue.js</span>
     </p>
+
+    <div class="flex flex-col">
+      <div class="mb-16 bg-white shadow-md rounded-lg">
+        <img
+          class="h-44 mx-8 mt-8 mx-auto object-cover"
+          :src="require('@/assets/images/github-octocat.png')"
+          alt="Github Octocat"
+        >
+
+        <div class="p-6">
+          <BaseTag label="Vue.js" />
+          <h3 class="block text-gray-800 font-semibold text-2xl mt-2 hover:text-gray-600 hover:underline">
+            Get your GitHub Profile image.
+          </h3>
+          <p class="text-sm text-gray-600 mt-4 mb-12">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris egestas quam volutpat viverra. In pretium nec senectus erat. Et malesuada lobortis.
+          </p>
+
+          <div class="mt-4 flex justify-between items-center">
+            <BaseAvatar />
+
+            <router-link
+              to="/github-avatar"
+              class="btn-primary"
+            >
+              Go to..
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import BaseAvatar from '@/components/BaseAvatar'
+import BaseTag from '@/components/BaseTag'
+
 export default {
   name: 'HomePage',
+  components: {BaseAvatar, BaseTag},
 }
 </script>
 

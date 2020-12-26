@@ -1,5 +1,9 @@
 @tailwind base;
 @tailwind components;
+
+.btn-primary {
+    @apply flex items-center py-2 px-4 capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700
+}
 @tailwind utilities;
 
 /* Fade transaction */

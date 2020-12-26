@@ -78,6 +78,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about-page" */ '@/pages/AboutPage.vue'),
   },
+  {
+    path: '/github-avatar',
+    name: 'GitHub Avatar',
+    component: () =>
+      import(/* webpackChunkName: "github-avatar-page" */ '@/pages/GithubAvatarPage.vue'),
+  },
 ]
 
 // const router = createRouter({
