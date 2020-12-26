@@ -1,21 +1,26 @@
 module.exports = {
   root: true,
+  parser: 'vue-eslint-parser',
   env: {
-    browser: true,
-    es6: true,
-    node: true
+    'browser': true,
+    'es6': true,
+    'node': true,
+  },
+  parserOptions: {
+    parser: 'babel-eslint',
   },
   extends: [
-    'plugin:vue/essential',
     'eslint:recommended',
+    'plugin:vue/recommended',
   ],
+  plugins: ['vue'],
   rules: {
-    quotes: ['error', 'single'],
-    indent: ['error', 2],
-
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-
+    'indent': ['error', 2, { 'ignoredNodes': ['TemplateLiteral'] }],
+    'template-curly-spacing' : 'off',
+    'quotes': ['warn', 'single'],
+    'semi': ['warn', 'never'],
+    'comma-dangle': ['warn', 'always-multiline'],
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
-  plugins: ['prettier'],
 }

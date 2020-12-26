@@ -1,15 +1,56 @@
-
 <template>
+  <nav class="bg-white shadow">
+    <div class="container mx-auto px-6 py-3">
+      <div class="md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+          <div class="text-xl font-semibold text-gray-700">
+            <a
+              href="#"
+              class="text-gray-800 text-xl font-bold hover:text-gray-700 md:text-2xl"
+            >Fabricio Zeferino</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="flex md:hidden">
+            <button
+              type="button"
+              class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+              aria-label="toggle menu"
+            >
+              <BurgerIcon />
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div class="hidden md:flex md:items-center md:justify-between flex-1">
+          <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
+            <BaseLink
+              route-to="/home"
+              label="Home"
+            />
+
+            <BaseLink
+              route-to="/about"
+              label="About"
+            />
+          </div>
+
+          <!-- right side -->
+          <div class="flex items-center mt-4 md:mt-0" />
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
+<!--<template>
   <nav class="flex fixed w-full bg-white shadow z-10" >
 
-<div class="flex-1 text-center">
+  <div class="flex-1 text-center">
        <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="#">Fabricio Zeferino</a>
     </div>
 
-
-
-
-    <!--left side-->
+    &lt;!&ndash;left side&ndash;&gt;
     <div class="flex items-center">
       <button
         class="h-56 w-56 flex -ml-12"
@@ -17,14 +58,14 @@
         @click="drawer"
       >
         <span class="w-42 h-42 m-auto fill-current cursor-pointer">
-          <!-- <Avatar v-if="isAuthenticated" /> -->
+          &lt;!&ndash; <Avatar v-if="isAuthenticated" /> &ndash;&gt;
 
-          <!-- <BaseIcon
+          &lt;!&ndash; <BaseIcon
             icon="burger"
             height="32"
             width="32"
-          /> -->
-          
+          /> &ndash;&gt;
+
         </span>
 
         <div class="flex md:hidden">
@@ -38,16 +79,15 @@
     </div>
 
 
-    <!--right side-->
+    &lt;!&ndash;right side&ndash;&gt;
     <div class="md:flex items-center">
         <div class="flex flex-col md:flex-row md:mx-6">
-            <router-link class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" to="/home">Home</router-link>
-            <router-link class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" to="/about">About</router-link>
+
         </div>
     </div>
 
 
-    <!--side bar-->
+    &lt;!&ndash;side bar&ndash;&gt;
     <transition
       enter-class="opacity-0"
       enter-active-class="ease-out transition-medium"
@@ -81,17 +121,20 @@
       <Menu @close-side-bar="drawer" />
     </aside>
   </nav>
-</template>
+</template>-->
 
 <script>
 // import Menu from '@/ecommerce/js/shared/layout/Menu.vue'
 // import SubNavBar from '@/ecommerce/js/shared/layout/SubNavBar'
 // import Avatar from '@/ecommerce/js/components/shared/Avatar'
 
+import BaseLink from '@/components/BaseLink'
+import BurgerIcon from '@/components/img/burger.svg?inline'
 export default {
   name: 'Navbar',
 
   // components: {Menu, SubNavBar, Avatar},
+  components: {BaseLink, BurgerIcon},
 
   data() {
     return {

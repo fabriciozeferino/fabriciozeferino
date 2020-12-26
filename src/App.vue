@@ -1,15 +1,19 @@
 <template>
-
-<div class="h-screen max-w-6xl mx-auto">
+  <div class="h-screen flex flex-col">
     <TheNavbar />
 
-    <transition name="fade" appear mode="out-in">
-      <div class="pt-64 h-full">
-        <router-view />
-      </div>
+    <transition
+      is="div"
+      name="fade"
+      appear
+      mode="out-in"
+      class="flex-1 container mx-auto"
+    >
+      <router-view />
     </transition>
-    
+
     <TheFooter />
+
     <!-- <loading :show="loading" /> -->
   </div>
 </template>
@@ -28,7 +32,7 @@ export default {
 
   data() {
     return {
-      users: []
+      users: [],
     }
   },
 
@@ -39,12 +43,12 @@ export default {
   methods: {
     async getUsers(){
       this.users = []
-      
+
       await fb.usersCollection.orderBy('first_name', 'asc')
-        .onSnapshot(snapshot => snapshot.forEach(item => this.users.push(item.data())));
-    }
+        .onSnapshot(snapshot => snapshot.forEach(item => this.users.push(item.data())))
+    },
   },
-};
+}
 
 
 </script>
