@@ -26,5 +26,5 @@
 }
 
 h1 {
-    @apply text-5xl tracking-wide;
+    @apply tracking-wide text-3xl sm:text-5xl;
 }

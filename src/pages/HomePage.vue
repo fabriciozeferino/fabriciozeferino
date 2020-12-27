@@ -1,10 +1,9 @@
 <template>
   <div class="flex flex-col justify-center items-center w-full max-w-4xl mx-auto">
-    <div class="px-16 py-4 overflow-hidden">
-      <h1 class="leading-snug font-bold mb-4">
-        Hello! My name is <span class="text-gray-900">Fabricio Zeferino.</span> I am a Full Stack Web Developer. Based in UK 🇬🇧.
-      </h1>
-    </div>
+    <h1 class="leading-snug font-medium mb-4">
+      Hello! My name is <span class="text-gray-900 font-bold">Fabricio Zeferino.</span> I am a Full Stack Web Developer. Based in UK 🇬🇧.
+    </h1>
+    
 
     <p class="my-8">
       Having fun with <span style="color: #4fc08d">Vue.js</span>
