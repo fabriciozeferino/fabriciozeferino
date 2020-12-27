@@ -4,10 +4,12 @@
       <div class="md:flex md:items-center md:justify-between">
         <div class="flex justify-between items-center">
           <div class="text-xl font-semibold text-gray-700">
-            <a
-              href="#"
+            <router-link
+              to="/home"
               class="text-gray-700 text-xl font-bold hover:text-gray-700 md:text-2xl"
-            >Fabricio Zeferino</a>
+            >
+              Fabricio Zeferino
+            </router-link>
           </div>
 
           <!-- Mobile menu button -->
