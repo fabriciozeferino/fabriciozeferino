@@ -1,44 +1,68 @@
 <template>
-  <div class="flex flex-col justify-center items-center w-full max-w-4xl mb-40 mx-auto">
-    <div class="mb-16 bg-white shadow-md rounded-lg bg-gray-700">
+  <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-screen-sm mx-auto bg-gray-700">
+    <img
+      class="h-44 w-full object-cover"
+      :src="require('@/assets/images/bg-01-l.jpg')"
+      alt="Github Octocat"
+    >
+
+    <div class="p-6">
+      <div class="mb-6">
+        <BaseTag label="Vue.js" />
+      </div>
+
+      <h3 class="block text-white font-semibold text-2xl mt-2">
+        Get your GitHub avatar.
+      </h3>
+
+      <div class="my-8">
+        <label
+          class="text-gray-200 font-medium"
+          for="username"
+        >User name</label>
+        <input
+          id="username"
+          v-model="username"
+          type="text"
+          class="base-input"
+        >
+        <span class="base-input-error">{{ error }}</span>
+      </div>
+
+      <div
+        class="my-8"
+        @click="showAvatar"
+      >
+        <label
+          class="text-gray-200 font-medium"
+          for="url"
+        >URL</label>
+        <input
+          id="url"
+          :value="`https://github.com/${username}.png?size=460`"
+          type="text"
+          class="base-input text-xs text-gray-500 hover:text-gray-400 cursor-pointer"
+          disabled
+        >
+      </div>
+
       <img
-        class="h-44 mx-8 mt-8 mx-auto object-cover"
-        :src="require('@/assets/images/github-octocat.png')"
+        v-if="username"
+        class="object-cover w-80 h-80 mx-auto"
+        :src="`https://github.com/${username}.png?size=460`"
+        :alt="username"
+        @error="setFallbackImageUrl"
+      >
+
+      <img
+        v-else
+        class="object-cover w-80 h-80 mx-auto"
+        src="https://github.com/github.png?size=460"
         alt="Github Octocat"
       >
 
-      <div class="p-6">
-        <BaseTag label="Vue.js" />
-        <h3 class="block text-gray-50 font-semibold text-2xl mt-2">
-          Get your GitHub Profile image.
-        </h3>
-
-
-        <div class="my-8">
-          <label
-            class="text-white"
-            for="username"
-          >Username</label>
-          <input
-            id="username"
-            v-model="username"
-            type="text"
-            class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring"
-          >
-          <span class="text-red-300 text-sm font-medium">{{ error }}</span>
-        </div>
-
-        <img
-          v-if="username"
-          class="object-cover w-80 h-80 mx-auto"
-          :src="urlAvatar"
-          :alt="username"
-          @error="setFallbackImageUrl"
-        >
-
-        <div class="mt-4 flex justify-between items-center">
-          <BaseAvatar dark />
-        </div>
+      <div class="mt-8 flex justify-between items-center">
+        <BaseAvatar dark />
       </div>
     </div>
   </div>
@@ -54,36 +78,25 @@ export default {
   components: {BaseAvatar, BaseTag},
   data() {
     return {
-      username: null,
+      username: 'github',
       error: null,
     }
   },
 
-  computed:{
-    urlAvatar(){
-      const image = new Image()
-      image.src = `https://github.com/${this.username}.png?size=460`
-    
-
-      // listen for `onload` event
-      image.onload = () => {
-
-        console.log(image)
-        if (image.status === 200) {
-          console.log('Image exists.')
-        } else {
-          console.log('Image does not exist.')
-        }
-      }
-
-      return `https://github.com/${this.username}.png?size=460`
-
+  watch:{
+    username(){
+      this.error = null
     },
   },
+
   methods: {
     setFallbackImageUrl(event) {
       this.error = 'Profile not found.'
-      return event.target.src = require('@/assets/images/github-octocat.png')
+      return event.target.src = require('@/assets/images/github-octocat.jpeg')
+    },
+
+    showAvatar() {
+      window.open(`https://github.com/${this.username}.png?size=460`, '_blank')
     },
   },
 }

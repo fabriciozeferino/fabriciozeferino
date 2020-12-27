@@ -4,6 +4,15 @@
 .btn-primary {
     @apply flex items-center py-2 px-4 capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700
 }
+
+.base-input {
+    @apply w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring relative
+}
+
+.base-input-error {
+    @apply text-red-300 text-sm font-medium absolute
+}
+
 @tailwind utilities;
 
 /* Fade transaction */
@@ -11,7 +20,8 @@
     transition: opacity .2s;
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to
+{
     opacity: 0;
 }
 

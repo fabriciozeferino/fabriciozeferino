@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center w-full max-w-4xl mb-40 mx-auto">
+  <div class="flex flex-col justify-center items-center w-full max-w-4xl mx-auto">
     <div class="px-16 py-4 overflow-hidden">
       <h1 class="leading-snug font-bold mb-4">
         Hello! My name is <span class="text-gray-900">Fabricio Zeferino.</span> I am a Full Stack Web Developer. Based in UK 🇬🇧.
@@ -11,10 +11,10 @@
     </p>
 
     <div class="flex flex-col">
-      <div class="mb-16 bg-white shadow-md rounded-lg">
+      <div class="mb-16 bg-white shadow-md rounded-lg overflow-hidden">
         <img
-          class="h-44 mx-8 mt-8 mx-auto object-cover"
-          :src="require('@/assets/images/github-octocat.png')"
+          class="h-44 w-full object-cover"
+          :src="require('@/assets/images/bg-01-l.jpg')"
           alt="Github Octocat"
         >
 
@@ -55,6 +55,6 @@ export default {
 
 <style scoped>
 .bg-image-1 {
-  background-image: url('~@/assets/images/bg-02.jpg')
+  background-image: url('~@/assets/images/bg-01-s.jpg')
 }
 </style>

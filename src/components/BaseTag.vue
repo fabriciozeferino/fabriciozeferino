@@ -1,7 +1,7 @@
 <template>
   <span
     v-if="label === 'Vue.js'"
-    class="font-medium border rounded-full px-3 py-1"
+    class="block-inline text-sm border rounded-full px-2 py-1 font-medium"
     style="color: #4fc08d; border-color: #4fc08d;"
   >
     {{ label }}

@@ -1,16 +1,16 @@
 <template>
-  <div class="h-screen flex flex-col bg-gray-50">
-    <TheNavbar class="mb-12" />
+  <div class="flex flex-col h-screen justify-between bg-gray-50 overflow-x-hidden">
+    <TheNavbar class="mb-8" />
 
-    <transition
-      is="div"
-      name="fade"
-      appear
-      mode="out-in"
-      class="flex-1 md:container w-full mx-auto"
-    >
-      <router-view />
-    </transition>
+    <div class="container mb-16 mx-auto ">
+      <transition
+        name="fade"
+        appear
+        mode="out-in"
+      >
+        <router-view />
+      </transition>
+    </div>
 
     <TheFooter />
 
@@ -19,9 +19,8 @@
 </template>
 
 
-
 <script>
-import * as fb from '../firebase'
+// import * as fb from '../firebase'
 import TheFooter from '@/components/TheFooter.vue'
 import TheNavbar from '@/components/TheNavbar.vue'
 
@@ -36,19 +35,30 @@ export default {
     }
   },
 
-  mounted() {
+  /*mounted() {
     this.getUsers()
   },
 
   methods: {
-    async getUsers(){
+    async getUsers() {
       this.users = []
 
       await fb.usersCollection.orderBy('first_name', 'asc')
         .onSnapshot(snapshot => snapshot.forEach(item => this.users.push(item.data())))
     },
-  },
+  },*/
+}
+</script>
+
+<style scoped>
+.container {
+  width: 100%;
 }
 
+@media (min-width: 375px) {
+  .container {
+    max-width: 100%;
+  }
+}
 
-</script>
+</style>
