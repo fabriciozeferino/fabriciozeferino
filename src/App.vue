@@ -5,7 +5,6 @@
     <div class="container mb-16 mx-auto ">
       <transition
         name="fade"
-        appear
         mode="out-in"
       >
         <router-view />

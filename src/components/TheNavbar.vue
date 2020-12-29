@@ -3,23 +3,17 @@
     <div class="container max-w-5xl mx-auto px-6 py-3">
       <div class="md:flex md:items-center md:justify-between">
         <div class="flex justify-between items-center">
-          <div class="text-xl font-semibold text-gray-700">
-            <router-link
-              to="/home"
-              class="text-gray-700 text-xl font-bold hover:text-gray-700 md:text-2xl"
-            >
-              Fabricio Zeferino
-            </router-link>
-          </div>
+          <TheMenuTitle />
 
           <!-- Mobile menu button -->
           <div class="flex md:hidden">
             <button
               type="button"
-              class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+              class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l p-3 -my-3 -mr-6 cursor-pointer"
               aria-label="toggle menu"
+              @click="drawer"
             >
-              <BurgerIcon />
+              <BurgerIcon class="w-10 h-10" />
             </button>
           </div>
         </div>
@@ -48,53 +42,8 @@
         </div>
       </div>
     </div>
-  </nav>
-</template>
-<!--<template>
-  <nav class="flex fixed w-full bg-white shadow z-10" >
 
-  <div class="flex-1 text-center">
-       <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="#">Fabricio Zeferino</a>
-    </div>
-
-    &lt;!&ndash;left side&ndash;&gt;
-    <div class="flex items-center">
-      <button
-        class="h-56 w-56 flex -ml-12"
-        aria-label="Open Menu"
-        @click="drawer"
-      >
-        <span class="w-42 h-42 m-auto fill-current cursor-pointer">
-          &lt;!&ndash; <Avatar v-if="isAuthenticated" /> &ndash;&gt;
-
-          &lt;!&ndash; <BaseIcon
-            icon="burger"
-            height="32"
-            width="32"
-          /> &ndash;&gt;
-
-        </span>
-
-        <div class="flex md:hidden">
-            <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="toggle menu">
-                <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
-                    <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-                </svg>
-            </button>
-        </div>
-      </button>
-    </div>
-
-
-    &lt;!&ndash;right side&ndash;&gt;
-    <div class="md:flex items-center">
-        <div class="flex flex-col md:flex-row md:mx-6">
-
-        </div>
-    </div>
-
-
-    &lt;!&ndash;side bar&ndash;&gt;
+    <!-- background shadow -->
     <transition
       enter-class="opacity-0"
       enter-active-class="ease-out transition-medium"
@@ -115,37 +64,76 @@
         />
       </div>
     </transition>
+
     <aside
       class="transform top-0 left-0 w-full xs:w-256 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
     >
-      <SubNavBar
-        title="Account"
-        back-button="home"
-        class="mx-20"
-        @back-button-clicked="drawer"
-      />
-      <Menu @close-side-bar="drawer" />
+      <div class="flex justify-between items-center border-b px-6 py-3 mb-8">
+        <TheMenuTitle />
+
+        <button
+          type="button"
+          class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l p-3 -my-3 -mr-6 cursor-pointer"
+          aria-label="toggle menu"
+          @click="drawer"
+        >
+          <BurgerIcon class="w-10 h-10" />
+        </button>
+      </div>
+      <div class="flex flex-col">
+        <router-link
+          tag="div"
+          class="flex justify-between items-center border-b border-t py-4 px-2 cursor-pointer font-semibold"
+          to="/home"
+          @click.native="drawer"
+        >
+          <span class="text-default-header">Home</span>
+
+          <ChevronRightIcon class="h-4 w-4" />
+        </router-link>
+
+        <router-link
+          tag="div"
+          class="flex justify-between items-center border-b py-4 px-2 cursor-pointer font-semibold"
+          to="/resume"
+          @click.native="drawer"
+        >
+          <span class="text-default-header">Resume</span>
+
+          <ChevronRightIcon class="h-4 w-4" />
+        </router-link>
+
+        <router-link
+          tag="div"
+          class="flex justify-between items-center border-b py-4 px-2 cursor-pointer font-semibold"
+          to="/about"
+          @click.native="drawer"
+        >
+          <span class="text-default-header">About</span>
+
+          <ChevronRightIcon class="h-4 w-4" />
+        </router-link>
+      </div>
     </aside>
   </nav>
-</template>-->
+</template>
 
 <script>
-// import Menu from '@/ecommerce/js/shared/layout/Menu.vue'
-// import SubNavBar from '@/ecommerce/js/shared/layout/SubNavBar'
-// import Avatar from '@/ecommerce/js/components/shared/Avatar'
 
-import BaseLink from '@/components/BaseLink'
 import BurgerIcon from '@/assets/icons/burger.svg'
+import ChevronRightIcon from '@/assets/icons/chevron_right.svg'
+import BaseLink from '@/components/BaseLink.vue'
+import TheMenuTitle from '@/components/TheMenuTitle.vue'
+
 export default {
   name: 'Navbar',
 
-  // components: {Menu, SubNavBar, Avatar},
-  components: {BaseLink, BurgerIcon},
+  components: {BurgerIcon, ChevronRightIcon, BaseLink, TheMenuTitle},
 
   data() {
     return {
-      isOpen: false,
+      isOpen: true,
     }
   },
 
