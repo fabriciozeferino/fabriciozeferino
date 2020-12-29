@@ -19,8 +19,8 @@
         </div>
 
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-        <div class="hidden md:flex md:items-center md:justify-between flex-1">
-          <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8" />
+        <div class="hidden md:flex items-center justify-end flex-1">
+          <div class="flex flex-row items-center mx-8 -mx-4" />
 
           <!-- right side -->
           <div class="flex items-center mt-4 md:mt-0">
@@ -31,6 +31,8 @@
               :label="item.label"
             />
           </div>
+
+          <ToggleDarkMode class="border" />
         </div>
       </div>
     </div>
@@ -97,11 +99,12 @@ import BurgerIcon from '@/assets/icons/burger.svg'
 import ChevronRightIcon from '@/assets/icons/chevron_right.svg'
 import BaseLink from '@/components/BaseLink.vue'
 import TheMenuTitle from '@/components/TheMenuTitle.vue'
+import ToggleDarkMode from '@/components/ToggleDarkMode'
 
 export default {
   name: 'Navbar',
 
-  components: {BurgerIcon, ChevronRightIcon, BaseLink, TheMenuTitle},
+  components: {BurgerIcon, ChevronRightIcon, BaseLink, TheMenuTitle, ToggleDarkMode},
 
   data() {
     return {
