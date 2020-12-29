@@ -6,7 +6,6 @@
       alt="avatar"
     >
 
-
     <div class="flex items-center px-6 py-3 bg-gray-900">
       <svg
         class="h-6 w-6 fill-current text-white"
