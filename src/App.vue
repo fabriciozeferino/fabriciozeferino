@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-screen justify-between bg-gray-50 overflow-x-hidden">
+  <div class="flex flex-col h-screen justify-between overflow-x-hidden">
     <TheNavbar class="mb-8" />
 
     <div class="container mb-16 mx-auto ">

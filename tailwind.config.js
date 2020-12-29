@@ -1,7 +1,30 @@
 module.exports = {
   purge: ['./public/**/*.html', './src/**/*.vue'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+
+      black: '#212121',
+      white: '#FFFFFF',
+
+      gray: {
+        50: '#f9fafb',
+        100: '#f3f4f6',
+        200: '#e5e7eb',
+        300: '#d1d5db',
+        400: '#9ca3af',
+        500: '#6b7280',
+        600: '#4b5563',
+        700: '#374151',
+        800: '#1f2937',
+        900: '#111827',
+      },
+
+      'default-red': '#FC4E4E',
+      'default-blue': '#0E154C',
+    },
     screens: {
       sm: '450px',
       md: '768px',
@@ -20,7 +43,9 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ['first'],
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

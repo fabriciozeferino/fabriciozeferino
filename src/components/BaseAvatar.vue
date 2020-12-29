@@ -6,20 +6,12 @@
       :src="require('@/assets/images/avatar.jpeg')"
       alt="avatar"
     >
-    <span
-      class="mx-2 font-semibold"
-      :class="dark ? 'text-white' : 'text-gray-700'"
-    >Fabricio Zeferino</span>
+    <span class="mx-2 font-semibold text-white dark:text-gray-200">Fabricio Zeferino</span>
   </div>
 </template>
 
 <script>
 export default {
   name: 'BaseAvatar',
-
-
-  props: {
-    dark: {type: Boolean, default: false},
-  },
 }
 </script>

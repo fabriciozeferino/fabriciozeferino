@@ -2,18 +2,36 @@
 @tailwind components;
 
 .btn-primary {
-    @apply flex items-center py-2 px-4 capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700
+    @apply flex items-center py-2 px-4 capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700;
 }
 
 .base-input {
-    @apply w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring relative
+    @apply w-full mt-1 px-4 py-2 block rounded bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300 border border-gray-500 focus:border-default-blue focus:outline-none focus:ring;
+}
+
+.base-input-label {
+    @apply text-gray-200 font-bold text-xs uppercase;
 }
 
 .base-input-error {
-    @apply text-red-300 text-sm font-medium absolute
+    @apply text-default-red text-sm font-medium;
+}
+
+/*Vue Slider*/
+@import '~vue-slider-component/theme/default.css';
+
+/* process style */
+.vue-slider-process {
+    background-color: theme('colors.default-red');
+}
+
+.vue-slider-dot-tooltip-inner {
+    border-color: theme('colors.default-red');
+    background-color: theme('colors.default-red');
 }
 
 @tailwind utilities;
+
 
 /* Fade transaction */
 .fade-enter-active, .fade-leave-active {

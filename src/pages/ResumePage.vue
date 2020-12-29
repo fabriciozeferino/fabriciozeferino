@@ -3,7 +3,7 @@
     id="cv"
     class="font-sans leading-relaxed text-gray-900 antialiased hyphens-manual optimize-legibility"
   >
-    <div class="page mx-auto max-w-a4 md:h-a4 p-6 sm:p-8 md:p-16 bg-white">
+    <div class="page mx-auto max-w-a4 md:h-a4 p-6 sm:p-8 md:p-16 bg-white dark:bg-gray-900 ">
       <div class="md:col-2 print:col-2 col-gap-md md:h-a4-col print:h-a4-col col-fill">
         <header class="flex items-center mb-2">
           <div
@@ -127,7 +127,7 @@
                 <li
                   v-for="(tag, index) in skill.tags"
                   :key="index"
-                  class="px-3 mr-1 mt-1 text-base text-gray-700 leading-relaxed print:bg-white print:border-inset bg-gray-200"
+                  class="px-3 mr-1 mt-1 text-base text-gray-700 leading-relaxed print:bg-white dark:bg-gray-900  print:border-inset bg-gray-200"
                 >
                   @{{ tag }}
                 </li>

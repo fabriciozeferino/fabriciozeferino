@@ -1,6 +1,6 @@
 <template>
   <router-link
-    class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0"
+    class="my-1 text-sm text-gray-700 dark:text-gray-200 tracking-wide font-semibold hover:text-indigo-500 md:mx-4 md:my-0"
     :to="routeTo"
   >
     {{ label }}

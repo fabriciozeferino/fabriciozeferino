@@ -10,7 +10,7 @@
     </p>
 
     <div class="flex flex-col">
-      <div class="mb-16 bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="mb-16 bg-white dark:bg-gray-900  shadow-md rounded-lg overflow-hidden">
         <img
           class="h-44 w-full object-cover"
           :src="require('@/assets/images/bg-01-l.jpg')"

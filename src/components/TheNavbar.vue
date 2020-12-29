@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white shadow">
+  <nav class="bg-white dark:bg-gray-900 shadow">
     <div class="container max-w-5xl mx-auto px-6 py-3">
       <div class="md:flex md:items-center md:justify-between">
         <div class="flex justify-between items-center">
@@ -9,7 +9,7 @@
           <div class="flex md:hidden">
             <button
               type="button"
-              class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l p-3 -my-3 -mr-6 cursor-pointer"
+              class="text-gray-500 dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l p-3 -my-3 -mr-6 cursor-pointer"
               aria-label="toggle menu"
               @click="drawer"
             >
@@ -25,18 +25,10 @@
           <!-- right side -->
           <div class="flex items-center mt-4 md:mt-0">
             <BaseLink
-              route-to="/home"
-              label="Home"
-            />
-
-            <BaseLink
-              route-to="/resume"
-              label="Resume"
-            />
-
-            <BaseLink
-              route-to="/about"
-              label="About"
+              v-for="item in menuItems"
+              :key="item.path"
+              :route-to="item.path"
+              :label="item.label"
             />
           </div>
         </div>
@@ -66,7 +58,7 @@
     </transition>
 
     <aside
-      class="transform top-0 left-0 w-full xs:w-256 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+      class="transform top-0 left-0 w-full xs:w-256 bg-white dark:bg-gray-900 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
     >
       <div class="flex justify-between items-center border-b px-6 py-3 mb-8">
@@ -74,7 +66,7 @@
 
         <button
           type="button"
-          class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l p-3 -my-3 -mr-6 cursor-pointer"
+          class="text-gray-500 dark:text-gray-300  hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l p-3 -my-3 -mr-6 cursor-pointer"
           aria-label="toggle menu"
           @click="drawer"
         >
@@ -83,34 +75,14 @@
       </div>
       <div class="flex flex-col">
         <router-link
+          v-for="item in menuItems"
+          :key="item.path"
           tag="div"
-          class="flex justify-between items-center border-b border-t py-4 px-2 cursor-pointer font-semibold"
-          to="/home"
+          class="flex justify-between items-center border-b first:border-t py-4 px-4 cursor-pointer font-semibold text-base"
+          :to="item.path"
           @click.native="drawer"
         >
-          <span class="text-default-header">Home</span>
-
-          <ChevronRightIcon class="h-4 w-4" />
-        </router-link>
-
-        <router-link
-          tag="div"
-          class="flex justify-between items-center border-b py-4 px-2 cursor-pointer font-semibold"
-          to="/resume"
-          @click.native="drawer"
-        >
-          <span class="text-default-header">Resume</span>
-
-          <ChevronRightIcon class="h-4 w-4" />
-        </router-link>
-
-        <router-link
-          tag="div"
-          class="flex justify-between items-center border-b py-4 px-2 cursor-pointer font-semibold"
-          to="/about"
-          @click.native="drawer"
-        >
-          <span class="text-default-header">About</span>
+          <span class="text-default-header">{{ item.label }}</span>
 
           <ChevronRightIcon class="h-4 w-4" />
         </router-link>
@@ -134,6 +106,12 @@ export default {
   data() {
     return {
       isOpen: false,
+
+      menuItems: [
+        {label: 'Home', path: '/home'},
+        {label: 'Resume', path: '/resume'},
+        {label: 'About', path: '/about'},
+      ],
     }
   },
 
