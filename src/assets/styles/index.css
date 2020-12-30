@@ -1,3 +1,15 @@
+/*Vue Slider*/
+@import '~vue-slider-component/theme/default.css';
+
+.vue-slider-process {
+    background-color: theme('colors.default-red');
+}
+
+.vue-slider-dot-tooltip-inner {
+    border-color: theme('colors.default-red');
+    background-color: theme('colors.default-red');
+}
+
 @tailwind base;
 @tailwind components;
 
@@ -15,19 +27,6 @@
 
 .base-input-error {
     @apply text-default-red text-sm font-medium;
-}
-
-/*Vue Slider*/
-@import '~vue-slider-component/theme/default.css';
-
-/* process style */
-.vue-slider-process {
-    background-color: theme('colors.default-red');
-}
-
-.vue-slider-dot-tooltip-inner {
-    border-color: theme('colors.default-red');
-    background-color: theme('colors.default-red');
 }
 
 @tailwind utilities;
