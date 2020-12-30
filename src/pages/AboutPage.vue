@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm mx-auto bg-white dark:bg-gray-900  shadow-lg rounded-lg overflow-hidden mb-30">
+  <div class="max-w-sm mx-auto bg-white dark:bg-black-dark  shadow-lg rounded-lg overflow-hidden mb-30">
     <img
       class="w-full h-56 object-cover object-center"
       src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
@@ -26,7 +26,7 @@
     </div>
 
     <div class="py-4 px-6">
-      <h1 class="text-xl font-semibold text-gray-800">
+      <h1 class="text-xl font-semibold text-black-medium">
         Patterson johnson
       </h1>
 

@@ -3,7 +3,7 @@
     id="cv"
     class="font-sans leading-relaxed text-gray-900 antialiased hyphens-manual optimize-legibility"
   >
-    <div class="page mx-auto max-w-a4 md:h-a4 p-6 sm:p-8 md:p-16 bg-white dark:bg-gray-900 ">
+    <div class="page mx-auto max-w-a4 md:h-a4 p-6 sm:p-8 md:p-16 bg-white dark:bg-black-dark ">
       <div class="md:col-2 print:col-2 col-gap-md md:h-a4-col print:h-a4-col col-fill">
         <header class="flex items-center mb-2">
           <div
@@ -79,7 +79,7 @@
 
             <section class="mb-4 col-break-avoid">
               <header>
-                <h3 class="text-lg text-gray-800 font-semibold leading-snug">
+                <h3 class="text-lg text-black-medium font-semibold leading-snug">
                   Bachelor in Business
                   Administration
                 </h3>
@@ -97,8 +97,8 @@
           </div>
         </section>
 
-        <section class="mt-4 py-2 px-4 bg-gray-100 col-break-avoid">
-          <h2 class="text-2xl text-gray-800 font-extrabold print:font-normal tracking-widest">
+        <section class="mt-4 py-2 px-4 bg-gray-200 col-break-avoid">
+          <h2 class="text-2xl text-black-medium font-extrabold print:font-normal tracking-widest">
             Key
             skills
           </h2>
@@ -114,7 +114,7 @@
             <section class="mb-4 col-break-avoid">
               <header>
                 <div class="flex items-center">
-                  <h3 class="inline text-lg text-gray-800 font-semibold">
+                  <h3 class="inline text-lg text-black-medium font-semibold">
                     @{{ skill.title }}
                   </h3>
                 </div>
@@ -127,7 +127,7 @@
                 <li
                   v-for="(tag, index) in skill.tags"
                   :key="index"
-                  class="px-3 mr-1 mt-1 text-base text-gray-700 leading-relaxed print:bg-white dark:bg-gray-900  print:border-inset bg-gray-200"
+                  class="px-3 mr-1 mt-1 text-base text-gray-700 leading-relaxed print:bg-white dark:bg-black-dark  print:border-inset bg-gray-200"
                 >
                   @{{ tag }}
                 </li>

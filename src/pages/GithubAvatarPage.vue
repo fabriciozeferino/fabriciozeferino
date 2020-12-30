@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-gray-900 shadow-md rounded-lg overflow-hidden max-w-screen-sm mx-auto bg-gray-700">
+  <div class="bg-white dark:bg-black-dark shadow-md rounded-lg overflow-hidden max-w-screen-sm mx-auto bg-gray-700">
     <img
       class="h-44 w-full object-cover"
       :src="require('@/assets/images/bg-01-l.jpg')"

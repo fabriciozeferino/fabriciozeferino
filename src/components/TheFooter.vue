@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-800 dark:bg-gray-900">
+  <footer class="bg-black-medium dark:bg-black-dark">
     <div class="container mx-auto px-6 py-4">
       <div class="lg:flex">
         <div class="w-full lg:w-2/5 -mx-6">
@@ -7,7 +7,7 @@
             <div>
               <a
                 href="#"
-                class="text-xl font-bold text-gray-100 hover:text-gray-400"
+                class="text-xl font-bold text-gray-200 hover:text-gray-400"
               >Fabricio Zeferino</a>
             </div>
                         
@@ -18,7 +18,7 @@
             <div class="flex mt-4 -mx-2">
               <a
                 href="#"
-                class="mx-2 text-gray-100 hover:text-gray-400"
+                class="mx-2 text-gray-200 hover:text-gray-400"
                 aria-label="Linkden"
               >
                 
@@ -32,7 +32,7 @@
 
               <a
                 href="#"
-                class="mx-2 text-gray-100 hover:text-gray-400"
+                class="mx-2 text-gray-200 hover:text-gray-400"
                 aria-label="Facebook"
               >
                 <svg
@@ -45,7 +45,7 @@
 
               <a
                 href="#"
-                class="mx-2 text-gray-100 hover:text-gray-400"
+                class="mx-2 text-gray-200 hover:text-gray-400"
                 aria-label="Twitter"
               >
                 <svg
@@ -62,7 +62,7 @@
         <div class="mt-6 lg:mt-0 lg:flex-1">
           <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             <div>
-              <h3 class="text-gray-100 uppercase">
+              <h3 class="text-gray-200 uppercase">
                 About
               </h3>
               <a
@@ -82,7 +82,7 @@
 
 
             <div>
-              <h3 class="text-gray-100 uppercase">
+              <h3 class="text-gray-200 uppercase">
                 Products
               </h3>
               <a
@@ -100,7 +100,7 @@
             </div>
 
             <div>
-              <h3 class="text-gray-100 uppercase">
+              <h3 class="text-gray-200 uppercase">
                 Contact
               </h3>
 
@@ -124,7 +124,7 @@
       <hr class="h-px my-6 bg-gray-700 border-none">
 
       <div>
-        <p class="text-center text-gray-100">
+        <p class="text-center text-gray-200">
           © Fabricio Zeferino 2020 - All rights reserved
         </p>
       </div>

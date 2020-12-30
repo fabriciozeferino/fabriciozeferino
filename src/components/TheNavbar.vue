@@ -1,6 +1,6 @@
 <template>
-  <nav class="bg-white dark:bg-gray-900 shadow">
-    <div class="container max-w-5xl mx-auto px-6 py-3">
+  <nav class="bg-white dark:bg-black-dark shadow">
+    <div class="container max-w-5xl mx-auto px-6 py-2 h-14">
       <div class="md:flex md:items-center md:justify-between">
         <div class="flex justify-between items-center">
           <TheMenuTitle />
@@ -9,11 +9,11 @@
           <div class="flex md:hidden">
             <button
               type="button"
-              class="text-gray-500 dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l p-3 -my-3 -mr-6 cursor-pointer"
+              class="text-gray-500 dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l dark:border-gray-700 px-4 py-2 -my-2 -mr-6 cursor-pointer"
               aria-label="toggle menu"
               @click="drawer"
             >
-              <BurgerIcon class="w-10 h-10" />
+              <BurgerIcon class="w-10 h-10 dark:text-gray-400 fill-current" />
             </button>
           </div>
         </div>
@@ -23,7 +23,7 @@
           <div class="flex flex-row items-center mx-8 -mx-4" />
 
           <!-- right side -->
-          <div class="flex items-center mt-4 md:mt-0">
+          <div class="flex items-center mt-4">
             <BaseLink
               v-for="item in menuItems"
               :key="item.path"
@@ -32,7 +32,7 @@
             />
           </div>
 
-          <ToggleDarkMode class="border" />
+          <ToggleDarkMode class="-mr-6" />
         </div>
       </div>
     </div>
@@ -60,27 +60,28 @@
     </transition>
 
     <aside
-      class="transform top-0 left-0 w-full xs:w-256 bg-white dark:bg-gray-900 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+      class="transform top-0 left-0 w-full xs:w-256 bg-white dark:bg-black-medium fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
     >
-      <div class="flex justify-between items-center border-b px-6 py-3 mb-8">
+      <div class="flex justify-between items-center shadow px-6 py-2 h-14 mb-8">
         <TheMenuTitle />
 
         <button
           type="button"
-          class="text-gray-500 dark:text-gray-300  hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l p-3 -my-3 -mr-6 cursor-pointer"
+          class="text-gray-500 dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l dark:border-gray-700 px-4 py-2 -my-2 -mr-6 cursor-pointer"
           aria-label="toggle menu"
           @click="drawer"
         >
           <BurgerIcon class="w-10 h-10" />
         </button>
       </div>
-      <div class="flex flex-col">
+
+      <div class="flex flex-col mb-16">
         <router-link
           v-for="item in menuItems"
           :key="item.path"
           tag="div"
-          class="flex justify-between items-center border-b first:border-t py-4 px-4 cursor-pointer font-semibold text-base"
+          class="flex justify-between items-center border-b dark:border-gray-700 shadow-inner first:border-t py-4 px-4 cursor-pointer font-semibold text-base"
           :to="item.path"
           @click.native="drawer"
         >
@@ -88,6 +89,12 @@
 
           <ChevronRightIcon class="h-4 w-4" />
         </router-link>
+      </div>
+
+      <div class="w-56 mx-auto">
+        <ToggleDarkMode class="shadow-md rounded-lg bg-black-light inline-block flex justify-center items-center">
+          <span class="text-gray-200 ml-1 mt-1">Toggle {{ theme }} theme.</span>
+        </ToggleDarkMode>
       </div>
     </aside>
   </nav>
@@ -116,6 +123,13 @@ export default {
         {label: 'About', path: '/about'},
       ],
     }
+  },
+  computed: {
+    theme() {
+      return  localStorage.theme === 'Dark'
+        ?'Light'
+        : 'Dark'
+    },
   },
 
   watch: {

@@ -10,7 +10,7 @@
     </p>
 
     <div class="flex flex-col">
-      <div class="mb-16 bg-white dark:bg-gray-900  shadow-md rounded-lg overflow-hidden">
+      <div class="mb-16 bg-white dark:bg-black-light shadow-md rounded-lg overflow-hidden">
         <img
           class="h-44 w-full object-cover"
           :src="require('@/assets/images/bg-01-l.jpg')"
@@ -19,10 +19,10 @@
 
         <div class="p-6">
           <BaseTag label="Vue.js" />
-          <h3 class="block text-gray-800 font-semibold text-2xl mt-2 hover:text-gray-600 hover:underline">
+          <h3 class="block text-black-medium dark:text-gray-300 font-semibold text-2xl mt-2 hover:text-gray-600 hover:underline">
             Get your GitHub Profile image.
           </h3>
-          <p class="text-sm text-gray-600 mt-4 mb-12">
+          <p class="text-sm text-gray-600 dark:text-gray-50 mt-4 mb-12">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris egestas quam volutpat viverra. In pretium nec senectus erat. Et malesuada lobortis.
           </p>
 
@@ -33,7 +33,7 @@
               to="/github-avatar"
               class="btn-primary"
             >
-              Go to..
+              Go to...
             </router-link>
           </div>
         </div>

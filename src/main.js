@@ -8,26 +8,17 @@ import './assets/styles/index.css'
 Vue.config.productionTip = false
 
 
-localStorage.theme = 'dark'
-
-
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 if (localStorage.theme === 'dark'
   || (!('theme' in localStorage)
     && window.matchMedia('(prefers-color-scheme: dark)').matches)
 ) {
   document.querySelector('html').classList.add('dark')
+  localStorage.theme = 'dark'
 } else {
   document.querySelector('html').classList.remove('dark')
 }
 
-// Whenever the user explicitly chooses light mode
-// localStorage.theme = 'light'
-
-// Whenever the user explicitly chooses dark mode
-
-// Whenever the user explicitly chooses to respect the OS preference
-// localStorage.removeItem('theme')
 
 new Vue({
   render: h => h(App),
