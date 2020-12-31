@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col justify-center items-center w-full max-w-4xl mx-auto">
-    <h1 class="leading-snug font-medium mb-4">
-      Hello! My name is <span class="text-gray-900 font-bold">Fabricio Zeferino.</span> I am a Full Stack Web Developer. Based in UK 🇬🇧.
+    <h1 class="mb-4 text-center">
+      Hello! My name is <span class="text-gray-900">Fabricio Zeferino.</span>
+      <br>
+      I'm a Full Stack Web Developer. Based in UK 🇬🇧.
     </h1>
     
 

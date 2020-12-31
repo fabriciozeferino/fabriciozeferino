@@ -34,7 +34,7 @@
 
 /* Fade transaction */
 .fade-enter-active, .fade-leave-active {
-    transition: opacity .2s;
+    transition: opacity .1s;
 }
 
 .fade-enter, .fade-leave-to
@@ -43,5 +43,5 @@
 }
 
 h1 {
-    @apply tracking-wide text-3xl sm:text-5xl;
+    @apply text-2xl sm:text-5xl font-bold leading-10 tracking-tighter;
 }

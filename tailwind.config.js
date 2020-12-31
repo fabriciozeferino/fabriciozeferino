@@ -2,6 +2,21 @@ module.exports = {
   purge: ['./public/**/*.html', './src/**/*.vue'],
   darkMode: 'class',
   theme: {
+    fontFamily: {
+      sans: [
+        'Inter',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Open Sans',
+        'Helvetica Neue',
+        'sans-serif',
+      ],
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -48,7 +63,14 @@ module.exports = {
         '2xl': '6rem',
       },
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        '5xl': '2.75rem',
+      },
+      lineHeight: {
+        10: '3.375rem',
+      },
+    },
   },
   variants: {
     extend: {

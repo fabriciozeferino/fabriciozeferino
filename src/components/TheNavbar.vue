@@ -68,11 +68,11 @@
 
         <button
           type="button"
-          class="text-gray-500 dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l dark:border-gray-700 px-4 py-2 -my-2 -mr-6 cursor-pointer"
+          class="text-gray-500 dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l dark:border-gray-700 px-4 py-3 -my-3 -mr-6 cursor-pointer"
           aria-label="toggle menu"
           @click="drawer"
         >
-          <BurgerIcon class="w-10 h-10" />
+          <CloseIcon class="w-6 h-6" />
         </button>
       </div>
 
@@ -92,8 +92,8 @@
       </div>
 
       <div class="w-56 mx-auto">
-        <ToggleDarkMode class="shadow-md rounded-lg bg-black-light inline-block flex justify-center items-center">
-          <span class="text-gray-200 ml-1 mt-1">Toggle {{ theme }} theme.</span>
+        <ToggleDarkMode class="shadow-md rounded-lg bg-white dark:bg-black-light inline-block flex justify-center items-center">
+          <span class="dark:text-gray-200 ml-1 mt-1">Toggle {{ theme }} theme.</span>
         </ToggleDarkMode>
       </div>
     </aside>
@@ -103,7 +103,8 @@
 <script>
 
 import BurgerIcon from '@/assets/icons/burger.svg'
-import ChevronRightIcon from '@/assets/icons/chevron_right.svg'
+import ChevronRightIcon from '@/assets/icons/chevron-right.svg'
+import CloseIcon from '@/assets/icons/close.svg'
 import BaseLink from '@/components/BaseLink.vue'
 import TheMenuTitle from '@/components/TheMenuTitle.vue'
 import ToggleDarkMode from '@/components/ToggleDarkMode'
@@ -111,7 +112,7 @@ import ToggleDarkMode from '@/components/ToggleDarkMode'
 export default {
   name: 'Navbar',
 
-  components: {BurgerIcon, ChevronRightIcon, BaseLink, TheMenuTitle, ToggleDarkMode},
+  components: {BurgerIcon, ChevronRightIcon, CloseIcon, BaseLink, TheMenuTitle, ToggleDarkMode},
 
   data() {
     return {
