@@ -1,6 +1,6 @@
 <template>
   <nav class="bg-white dark:bg-black-dark shadow">
-    <div class="container max-w-5xl mx-auto px-6 py-2 h-14">
+    <div class="md:container mx-auto px-6 py-2 h-14">
       <div class="md:flex md:items-center md:justify-between">
         <div class="flex justify-between items-center">
           <TheMenuTitle />
@@ -92,7 +92,10 @@
       </div>
 
       <div class="w-56 mx-auto">
-        <ToggleDarkMode class="shadow-md rounded-lg bg-white dark:bg-black-light inline-block flex justify-center items-center">
+        <ToggleDarkMode
+          class="shadow-md rounded-lg bg-white dark:bg-black-light inline-block flex justify-center items-center"
+          @click.native="drawer"
+        >
           <span class="dark:text-gray-200 ml-1 mt-1">Toggle {{ theme }} theme.</span>
         </ToggleDarkMode>
       </div>

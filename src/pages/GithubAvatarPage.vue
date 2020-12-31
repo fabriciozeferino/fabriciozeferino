@@ -75,10 +75,6 @@
         :src="`https://github.com/github.png?size=${size}`"
         alt="Github Octocat"
       >
-
-      <div class="mt-8 flex justify-between items-center">
-        <BaseAvatar />
-      </div>
     </div>
   </div>
 </template>

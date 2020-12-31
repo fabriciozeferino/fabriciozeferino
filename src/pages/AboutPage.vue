@@ -1,14 +1,14 @@
 <template>
-  <div class="max-w-sm mx-auto bg-white dark:bg-black-dark  shadow-lg rounded-lg overflow-hidden mb-30">
+  <div class="max-w-sm mx-auto bg-white dark:bg-black-dark shadow-lg rounded-lg overflow-hidden mb-30">
     <img
-      class="w-full h-56 object-cover object-center"
-      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+      class="h-56 w-full object-cover object-center"
+      :src="require('@/assets/images/bg-03.jpg')"
       alt="avatar"
     >
 
-    <div class="flex items-center px-6 py-3 bg-gray-900">
+    <div class="flex items-center px-6 py-3 bg-black-light text-white">
       <svg
-        class="h-6 w-6 fill-current text-white"
+        class="h-6 w-6 fill-current"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,18 +20,18 @@
         />
       </svg>
 
-      <h1 class="mx-3 text-white font-semibold text-lg">
+      <h3 class="mx-3">
         Focusing
-      </h1>
+      </h3>
     </div>
 
     <div class="py-4 px-6">
-      <h1 class="text-xl font-semibold text-black-medium">
-        Patterson johnson
-      </h1>
+      <h2>
+        Fabricio Zeferino
+      </h2>
 
       <p class="py-2 text-gray-700">
-        Full Stack maker & UI / UX Designer , love hip hop music Author of Building UI.
+        Full Stack Web Developer.
       </p>
 
       <div class="flex items-center mt-4 text-gray-700">
@@ -48,9 +48,9 @@
           />
         </svg>
 
-        <h1 class="px-2 text-sm">
+        <h5 class="px-2">
           Meraki UI
-        </h1>
+        </h5>
       </div>
 
       <div class="flex items-center mt-4 text-gray-700">
@@ -71,9 +71,9 @@
           />
         </svg>
 
-        <h1 class="px-2 text-sm">
-          California
-        </h1>
+        <h5 class="px-2">
+          Wirral, UK
+        </h5>
       </div>
 
       <div class="flex items-center mt-4 text-gray-700">
@@ -90,9 +90,9 @@
           />
         </svg>
 
-        <h1 class="px-2 text-sm">
-          patterson@example.com
-        </h1>
+        <h5 class="px-2">
+          fabriciozeferino@gmail.com
+        </h5>
       </div>
     </div>
   </div>

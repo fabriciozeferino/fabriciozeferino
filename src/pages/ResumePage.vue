@@ -16,7 +16,7 @@
             >-->
           </div>
           <div class="leading-none">
-            <h1 class="text-2xl font-bold uppercase text-gray-900">
+            <h1>
               Fabricio Zeferino
             </h1>
             <small class="uppercase">Full-Stack Developer</small>

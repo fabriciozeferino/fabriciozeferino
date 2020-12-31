@@ -1,10 +1,18 @@
 <template>
-  <div class="flex flex-col justify-center items-center w-full max-w-4xl mx-auto">
-    <h1 class="mb-4 text-center">
-      Hello! My name is <span class="text-gray-900">Fabricio Zeferino.</span>
-      <br>
-      I'm a Full Stack Web Developer. Based in UK 🇬🇧.
-    </h1>
+  <div class="md:container mx-auto px-2 md:px-32 py-4">
+    <div class="mb-32 mt-8">
+      <h1 class="text-center mb-8">
+        Hello! My name is <span class="font-extrabold">Fabricio Zeferino.</span>
+        <br>
+        I'm a Full Stack Web Developer.
+        <br>
+        Based in UK 🇬🇧.
+      </h1>
+
+      <p>
+        I’m passionate about solving problems to make humans satisfied when they’re using digital products and services. I'm building & designing digital products since 11 years, with the combination of business development, UX/UI design, front-end development and online marketing.
+      </p>
+    </div>
     
 
     <p class="my-8">
@@ -14,7 +22,7 @@
     <div class="flex flex-col">
       <div class="mb-16 bg-white dark:bg-black-light shadow-md rounded-lg overflow-hidden">
         <img
-          class="h-44 w-full object-cover"
+          class="h-44 w-full object-cover object-center"
           :src="require('@/assets/images/bg-01-l.jpg')"
           alt="Github Octocat"
         >
