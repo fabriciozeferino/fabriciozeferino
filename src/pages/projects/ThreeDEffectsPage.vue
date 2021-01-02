@@ -4,11 +4,11 @@
       ref="card"
       class="preserve-3d w-full lg:max-w-3xl h-full py-8"
       @mousemove="mousemoveElement"
-      @pointerdown="mousemoveElement"
+      @touchmove.passive="mousemoveElement"
       @mouseenter="mouseenterElement"
-      @pointerenter="mouseenterElement"
+      @touchenter.passive="mouseenterElement"
       @mouseleave="mouseleaveElement"
-      @pointerleave="mouseleaveElement"
+      @touchleave.passive="mouseleaveElement"
     >
       <div
         class="card rounded-3xl bg-white dark:bg-black-light py-8 px-10 sm:px-10 sm:max-w-xs min-w mx-auto"
@@ -133,62 +133,73 @@ export default {
 <style scoped>
 * {
   touch-action: none;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 .perspective {
-  perspective: 1000px;
+perspective: 1000px;
 }
 
 .preserve-3d {
-  transform-style: preserve-3d;
+transform-style: preserve-3d;
 }
 
 .shadow {
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2),
-  0 0 50px rgba(0, 0, 0, 0.2);
+box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2),
+0 0 50px rgba(0, 0, 0, 0.2);
 }
 
 .text-shadow {
-  text-shadow: 0 2px 50px rgba(0, 0, 0, 0.7);
+text-shadow: 0 2px 50px rgba(0, 0, 0, 0.7);
 }
 
 .card {
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2),
-  0 0 50px rgba(0, 0, 0, 0.2);
+box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2),
+0 0 50px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 370px) {
-  .card {
-    min-width: 370px;
-  }
+.card {
+  min-width: 370px;
+}
 }
 
 #circle {
-  background: linear-gradient(
-      to right,
-      rgba(245, 70, 66, 0.75),
-      rgba(8, 83, 156, 0.75)
-  );
+background: linear-gradient(
+    to right,
+    rgba(245, 70, 66, 0.75),
+    rgba(8, 83, 156, 0.75)
+);
 }
 
 
 .sizes button {
-  margin: 1rem 0;
-  padding: 0.5rem 2rem;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  cursor: pointer;
+margin: 1rem 0;
+padding: 0.5rem 2rem;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+border-radius: 30px;
+cursor: pointer;
 }
 
 .sizes button.active {
-  background: #585858;
-  color: white;
-  border-style: none;
-  outline: 0;
+background: #585858;
+color: white;
+border-style: none;
+outline: 0;
 }
 
 button:focus {
-  outline: 0;
+outline: 0;
 
 }
 </style>
