@@ -11,7 +11,7 @@
       @touchleave.passive="mouseleaveElement"
     >
       <div
-        class="card rounded-3xl bg-white dark:bg-black-light py-8 px-10 sm:px-10 sm:max-w-xs min-w mx-auto"
+        class="card rounded-3xl bg-white dark:bg-black-light py-8 px-10 sm:px-10 sm:max-w-xs mx-auto sm:min-h-0"
       >
         <div
           ref="sneaker"
@@ -84,22 +84,10 @@ export default {
       this.$refs.card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
     },
 
-    /*div.addEventListener("pointerdown",(e)=>{
-      console.log("down")
-      console.log("attempt release implicit capture")
-      div.releasePointerCapture(e.pointerId) // <- Important!
-    })
-    div.addEventListener("pointerenter",(e)=>{
-      console.log("enter")
-    })
-    div.addEventListener("pointerleave",(e)=>{
-      console.log("leave")
-    })*/
     mouseenterElement() {
       this.$refs.card.style.transition = 'none'
       //Popout
       this.$refs.title.style.transform = 'translateZ(40px)'
-      // this.$refs.sneaker.style.transform = 'translateZ(100px) rotateZ(-45deg)'
       this.$refs.sneaker.style.transform = 'translateZ(50px)'
       this.$refs.description.style.transform = 'translateZ(40px)'
       this.$refs.sizes.style.transform = 'translateZ(40px)'
@@ -168,10 +156,10 @@ box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2),
 0 0 50px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-width: 370px) {
-.card {
-  min-width: 370px;
-}
+@media (min-width: 450px) {
+  .card {
+    min-width: 370px;
+  }
 }
 
 #circle {
