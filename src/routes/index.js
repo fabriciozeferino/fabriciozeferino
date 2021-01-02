@@ -52,11 +52,6 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-// Vue.use(VueRouter)
-// import { createWebHistory, createRouter } from 'vue-router'
-// import Home from '@/views/Home.vue'
-// import About from '@/views/About.vue'
-
 const routes = [
   { path: '/', redirect: '/home' },
 
@@ -82,14 +77,15 @@ const routes = [
     path: '/github-avatar',
     name: 'GitHub Avatar',
     component: () =>
-      import(/* webpackChunkName: "github-avatar-page" */ '@/pages/GithubAvatarPage.vue'),
+      import(/* webpackChunkName: "github-avatar-page" */ '@/pages/projects/GithubAvatarPage.vue'),
+  },
+  {
+    path: '/three-d-effects',
+    name: '3D Effects',
+    component: () =>
+      import(/* webpackChunkName: "three-d-effects-page" */ '@/pages/projects/ThreeDEffectsPage.vue'),
   },
 ]
-
-// const router = createRouter({
-//   history: createWebHistory(),
-//   routes
-// })
 
 const router = new VueRouter({
   base: process.env.BASE_URL,

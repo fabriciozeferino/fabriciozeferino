@@ -62,9 +62,9 @@
         <div class="mt-6 lg:mt-0 lg:flex-1">
           <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             <div>
-              <h3 class="text-gray-200 uppercase">
+              <h5 class="text-gray-200 uppercase">
                 About
-              </h3>
+              </h5>
               <a
                 href="#"
                 class="block mt-2 text-sm text-gray-400"
@@ -82,9 +82,9 @@
 
 
             <div>
-              <h3 class="text-gray-200 uppercase">
+              <h5 class="text-gray-200 uppercase">
                 Products
-              </h3>
+              </h5>
               <a
                 href="#"
                 class="block mt-2 text-sm text-gray-400"
@@ -100,9 +100,9 @@
             </div>
 
             <div>
-              <h3 class="text-gray-200 uppercase">
+              <h5 class="text-gray-200 uppercase">
                 Contact
-              </h3>
+              </h5>
 
               <section class="mb-4 text-sm text-gray-400">
                 <ul>
