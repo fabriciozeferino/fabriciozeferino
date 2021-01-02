@@ -1,8 +1,8 @@
 <template>
-  <div class="perspective flex justify-center items-center h-full w-full">
+  <div class="perspective flex justify-center items-center h-screen sm:h-full w-full">
     <div
       ref="card"
-      class="preserve-3d w-full lg:max-w-3xl h-full py-8"
+      class="preserve-3d w-full lg:max-w-3xl h-full py-4 sm:py-8"
       @mousemove="mousemoveElement"
       @touchmove.passive="mousemoveElement"
       @mouseenter="mouseenterElement"
@@ -11,15 +11,15 @@
       @touchleave.passive="mouseleaveElement"
     >
       <div
-        class="card rounded-3xl bg-white dark:bg-black-light py-8 px-10 sm:px-10 sm:max-w-xs mx-auto sm:min-h-0"
+        class="card rounded-3xl bg-white dark:bg-black-light py-4 px-10 sm:px-10 sm:max-w-xs mx-auto sm:min-h-0"
       >
         <div
           ref="sneaker"
-          class="h-80 flex justify-center items-center transition-transform"
+          class="h-48 sm:h-80 flex justify-center items-center transition-transform"
         >
           <div
             id="circle"
-            class="w-60 sm:w-60 h-60 z-10 rounded-full absolute transition-transform shadow"
+            class="w-40 sm:w-60 h-40 sm:h-60 z-10 rounded-full absolute transition-transform shadow"
           />
           <img
             id="sneaker"
@@ -31,23 +31,24 @@
         <div>
           <h1
             ref="title"
-            class="transition-transform text-shadow"
+            class="transition-transform text-shadow text-xl sm:text-3xl"
           >
             Adidas ZX
           </h1>
           <p
             ref="description"
-            class="uppercase opacity-75 py-8 leading-6 transition-transform text-shadow"
+            class="uppercase opacity-75 py-2 sm:py-8 leading-6 transition-transform text-shadow text-sm sm:text-base"
           >
             future-ready trainers with wrapped boost for exception comfort.
           </p>
           <div
             ref="sizes"
-            class="sizes flex justify-between flex-wrap font-bold text-gray-300 mb-16 transition-transform"
+            class="sizes flex justify-between flex-wrap font-bold text-gray-300 mb-4 sm:mb-16 transition-transform"
           >
             <button
               v-for="item in [37,38,39,40,41,42]"
               :key="item"
+              class="py-2 px-4 m-2"
               :class="isActive(item) ? 'active' : null"
               @click="setSize(item)"
             >
@@ -58,7 +59,7 @@
             ref="purchase"
             class="transition-transform"
           >
-            <button class="w-full bg-default-red text-white font-extrabold py-4 rounded-3xl shadow">
+            <button class="w-full bg-default-red text-white font-extrabold py-4 rounded-3xl shadow mb-4">
               Purchase
             </button>
           </div>
@@ -172,8 +173,6 @@ background: linear-gradient(
 
 
 .sizes button {
-margin: 1rem 0;
-padding: 0.5rem 2rem;
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 border-radius: 30px;
 cursor: pointer;
