@@ -1,16 +1,15 @@
 <template>
   <div class="md:container mx-auto px-2 md:px-32 py-4">
-    <div class="mb-32 mt-8">
+    <div class="mb-32 my-8">
       <h1 class="text-center mb-8">
         Hello! My name is <span class="font-extrabold">Fabricio Zeferino.</span>
         <br>
         I'm a Full Stack Web Developer.
-        <br>
-        Based in UK 🇬🇧.
       </h1>
 
       <p>
-        I’m passionate about solving problems to make humans satisfied when they’re using digital products and services. I'm building & designing digital products since 11 years, with the combination of business development, UX/UI design, front-end development and online marketing.
+        <!--        I’m passionate about solving problems to make humans satisfied when they’re using digital products and services. I'm building & designing digital products since 11 years, with the combination of business development, UX/UI design, front-end development and online marketing.-->
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a aliquet libero. Nulla mollis nec arcu vitae finibus. Donec condimentum nunc at elementum interdum. Etiam nec viverra nunc, eget euismod odio. Praesent sagittis dolor lorem, sit amet varius turpis lacinia lobortis.
       </p>
     </div>
     
