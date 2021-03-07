@@ -10,7 +10,7 @@
 
     <TheFooter />
 
-    <!-- <loading :show="loading" /> -->
+    <!-- <loading  f :show="loading" /> -->
   </div>
 </template>
 
