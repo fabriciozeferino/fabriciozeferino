@@ -83,7 +83,7 @@
           tag="div"
           class="flex justify-between items-center border-b dark:border-gray-700 shadow-inner first:border-t py-4 px-4 cursor-pointer font-semibold text-base"
           :to="item.path"
-          @click.native="drawer"
+          @click="drawer"
         >
           <span class="text-default-header">{{ item.label }}</span>
 
@@ -94,9 +94,11 @@
       <div class="w-56 mx-auto">
         <ToggleDarkMode
           class="shadow-md rounded-lg bg-white dark:bg-black-light inline-block flex justify-center items-center"
-          @click.native="drawer"
+          @click="drawer"
         >
-          <span class="dark:text-gray-200 ml-1 mt-1">Toggle {{ theme }} theme.</span>
+          <span class="dark:text-gray-200 ml-1 mt-1"
+            >Toggle {{ theme }} theme.</span
+          >
         </ToggleDarkMode>
       </div>
     </aside>
@@ -104,7 +106,6 @@
 </template>
 
 <script>
-
 import BurgerIcon from '@/assets/icons/burger.svg'
 import ChevronRightIcon from '@/assets/icons/chevron-right.svg'
 import CloseIcon from '@/assets/icons/close.svg'
@@ -115,24 +116,30 @@ import ToggleDarkMode from '@/components/ToggleDarkMode'
 export default {
   name: 'Navbar',
 
-  components: {BurgerIcon, ChevronRightIcon, CloseIcon, BaseLink, TheMenuTitle, ToggleDarkMode},
+  components: {
+    BurgerIcon,
+    ChevronRightIcon,
+    CloseIcon,
+    BaseLink,
+    TheMenuTitle,
+    ToggleDarkMode,
+  },
 
   data() {
     return {
       isOpen: false,
 
       menuItems: [
-        {label: 'Home', path: '/home'},
-        {label: 'Resume', path: '/resume'},
-        {label: 'About', path: '/about'},
+        { label: 'Home', path: '/home' },
+        { label: 'Resume', path: '/resume' },
+        { label: 'About', path: '/about' },
       ],
     }
   },
+
   computed: {
     theme() {
-      return  localStorage.theme === 'Dark'
-        ?'Light'
-        : 'Dark'
+      return localStorage.theme === 'Dark' ? 'Light' : 'Dark'
     },
   },
 

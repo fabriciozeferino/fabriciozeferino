@@ -2,21 +2,17 @@
   <div class="flex flex-col h-screen justify-between overflow-x-hidden">
     <TheNavbar />
 
-    <div class="container mx-auto">
-      <transition
-        name="fade"
-        mode="out-in"
-      >
-        <router-view />
+    <router-view v-slot="{ Component }" class="container mx-auto px-10">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
       </transition>
-    </div>
+    </router-view>
 
     <TheFooter />
 
     <!-- <loading :show="loading" /> -->
   </div>
 </template>
-
 
 <script>
 // import * as fb from '../firebase'
@@ -26,26 +22,7 @@ import TheNavbar from '@/components/TheNavbar.vue'
 export default {
   name: 'App',
 
-  components: {TheFooter, TheNavbar},
-
-  data() {
-    return {
-      users: [],
-    }
-  },
-
-  /*mounted() {
-    this.getUsers()
-  },
-
-  methods: {
-    async getUsers() {
-      this.users = []
-
-      await fb.usersCollection.orderBy('first_name', 'asc')
-        .onSnapshot(snapshot => snapshot.forEach(item => this.users.push(item.data())))
-    },
-  },*/
+  components: { TheFooter, TheNavbar }
 }
 </script>
 
@@ -59,5 +36,4 @@ export default {
     max-width: 100%;
   }
 }
-
 </style>

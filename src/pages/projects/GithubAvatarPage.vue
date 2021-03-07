@@ -1,10 +1,12 @@
 <template>
-  <div class="bg-white dark:bg-black-dark shadow-md rounded-lg overflow-hidden max-w-screen-sm mx-auto bg-gray-700">
+  <div
+    class="bg-white dark:bg-black-dark shadow-md rounded-lg overflow-hidden max-w-screen-sm mx-auto bg-gray-700"
+  >
     <img
       class="h-44 w-full object-cover"
       :src="require('@/assets/images/bg-01-l.jpg')"
       alt="Github Octocat"
-    >
+    />
 
     <div class="p-6">
       <div class="mb-6">
@@ -16,49 +18,33 @@
       </h3>
 
       <div class="my-8">
-        <label
-          class="base-input-label"
-          for="username"
-        >User name</label>
+        <label class="base-input-label" for="username">User name</label>
         <input
           id="username"
           v-model="username"
           placeholder="User name"
           type="text"
           class="base-input"
-        >
+        />
         <div class="h-0">
           <span class="base-input-error">{{ error }}</span>
         </div>
       </div>
 
       <div>
-        <label
-          class="base-input-label"
-          for="url"
-        >Size</label>
-        <VueSlider
-          id="size"
-          v-model="size"
-          :data="range"
-        />
+        <label class="base-input-label" for="url">Size</label>
+        <VueSlider id="size" v-model="size" :data="range" />
       </div>
 
-      <div
-        class="my-8"
-        @click="showAvatar"
-      >
-        <label
-          class="base-input-label"
-          for="url"
-        >URL</label>
+      <div class="my-8" @click="showAvatar">
+        <label class="base-input-label" for="url">URL</label>
         <input
           id="url"
           :value="`https://github.com/${username}.png?size=${size}`"
           type="text"
           class="base-input text-xs text-gray-500 dark:text-gray-300  hover:text-gray-400 cursor-pointer"
           disabled
-        >
+        />
       </div>
 
       <img
@@ -67,27 +53,26 @@
         :src="`https://github.com/${username}.png?size=${size}`"
         :alt="username"
         @error="setFallbackImageUrl"
-      >
+      />
 
       <img
         v-else
         class="object-cover w-80 h-80 mx-auto"
         :src="`https://github.com/github.png?size=${size}`"
         alt="Github Octocat"
-      >
+      />
     </div>
   </div>
 </template>
 
 <script>
-import BaseAvatar from '@/components/BaseAvatar.vue'
 import BaseTag from '@/components/BaseTag.vue'
 import VueSlider from 'vue-slider-component'
 
 export default {
   name: 'GithubAvatarPage',
 
-  components: {BaseAvatar, BaseTag, VueSlider},
+  components: { BaseTag, VueSlider },
   data() {
     return {
       username: 'github',
@@ -98,13 +83,15 @@ export default {
 
   computed: {
     range() {
-      return Array(456).join(0).split(0)
+      return Array(456)
+        .join(0)
+        .split(0)
         .map((val, i) => i + 5)
     },
   },
 
-  watch:{
-    username(){
+  watch: {
+    username() {
       this.error = null
     },
   },
@@ -112,11 +99,14 @@ export default {
   methods: {
     setFallbackImageUrl(event) {
       this.error = 'Profile not found.'
-      return event.target.src = require('@/assets/images/github-octocat.jpeg')
+      return (event.target.src = require('@/assets/images/github-octocat.jpeg'))
     },
 
     showAvatar() {
-      window.open(`https://github.com/${this.username}.png?size=${this.size}`, '_blank')
+      window.open(
+        `https://github.com/${this.username}.png?size=${this.size}`,
+        '_blank',
+      )
     },
   },
 }
@@ -145,7 +135,8 @@ export default {
 .vue-slider-mark {
   z-index: 4;
 }
-.vue-slider-mark:first-child .vue-slider-mark-step, .vue-slider-mark:last-child .vue-slider-mark-step {
+.vue-slider-mark:first-child .vue-slider-mark-step,
+.vue-slider-mark:last-child .vue-slider-mark-step {
   display: none;
 }
 .vue-slider-mark-step {
@@ -190,7 +181,7 @@ export default {
   box-sizing: content-box;
 }
 .vue-slider-dot-tooltip-inner::after {
-  content: "";
+  content: '';
   position: absolute;
 }
 .vue-slider-dot-tooltip-inner-top::after {
@@ -247,5 +238,4 @@ export default {
 }
 
 /*# sourceMappingURL=default.css.map */
-
 </style>

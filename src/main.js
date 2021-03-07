@@ -1,17 +1,16 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-
-import router from '@/routes/index.js'
+import './registerServiceWorker'
+import router from './router'
+import store from './store'
 
 import './assets/styles/index.css'
 
-Vue.config.productionTip = false
-
-
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-if (localStorage.theme === 'dark'
-  || (!('theme' in localStorage)
-    && window.matchMedia('(prefers-color-scheme: dark)').matches)
+if (
+  localStorage.theme === 'dark' ||
+  (!('theme' in localStorage) &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches)
 ) {
   document.querySelector('html').classList.add('dark')
   localStorage.theme = 'dark'
@@ -19,8 +18,7 @@ if (localStorage.theme === 'dark'
   document.querySelector('html').classList.remove('dark')
 }
 
-
-new Vue({
-  render: h => h(App),
-  router,
-}).$mount('#app')
+createApp(App)
+  .use(store)
+  .use(router)
+  .mount('#app')
