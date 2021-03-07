@@ -6,7 +6,7 @@ import store from './store'
 
 import './assets/styles/index.css'
 
-// On page load or when changing thsemes, best to add inline in `head` to avoid FOUC
+// On page load or when changing tdhsemes, best to add inline in `head` to avoid FOUC
 if (
   localStorage.theme === 'dark' ||
   (!('theme' in localStorage) &&
