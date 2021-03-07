@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { Raw, createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -42,7 +42,7 @@ const routes = [
 console.log(process.env.BASE_URL)
 
 const router = createRouter({
-  history: createWebHistory('/fabriciozeferino'),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
