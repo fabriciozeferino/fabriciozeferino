@@ -39,10 +39,11 @@ const routes = [
   }
 ]
 
+/* eslint-disable no-console */
 console.log(process.env.BASE_URL)
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 })
 
