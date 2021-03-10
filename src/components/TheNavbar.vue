@@ -68,7 +68,7 @@
 
         <button
           type="button"
-          class="text-gray-500 dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l dark:border-gray-700 px-4 py-3 -my-3 -mr-6 cursor-pointer"
+          class="text-gray-500  dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:text-gray-600 border-l dark:border-gray-700 px-4 py-3 -my-3 -mr-6 cursor-pointer"
           aria-label="toggle menu"
           @click="drawer"
         >
