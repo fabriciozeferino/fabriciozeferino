@@ -5,7 +5,7 @@ const Quote = require('inspirational-quotes')
 
 console.log(Quote.getRandomQuote())
 
-const commitMessage = `deploy: ${Quote.getRandomQuote()}`
+const commitMessage = `${Quote.getRandomQuote()}`
 
 const fs = require('fs')
 ;(async () => {
