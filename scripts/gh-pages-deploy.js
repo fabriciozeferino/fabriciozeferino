@@ -1,11 +1,18 @@
 /* eslint-disable no-console */
 const execa = require('execa')
+
+const Quote = require('inspirational-quotes')
+
+console.log(Quote.getRandomQuote())
+
+const commitMessage = `deploy: ${Quote.getRandomQuote()}`
+
 const fs = require('fs')
 ;(async () => {
   try {
     await execa('git', ['add', '--all'])
 
-    await execa('git', ['commit', '-m', '"commit before deploy"'])
+    await execa('git', ['commit', '-m', String(commitMessage)])
 
     await execa('git', ['push', 'origin', 'master'])
 
